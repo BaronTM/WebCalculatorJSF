@@ -2,6 +2,11 @@ package model;
 
 import java.text.NumberFormat;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
+
+@ManagedBean(name = "calc", eager = true)
+@ApplicationScoped
 public class Calculator {
 
 	private double a;
@@ -140,7 +145,7 @@ public class Calculator {
 					if (strings[0].length() > 12) {
 						result = "ERROR";
 					} else {
-						result = strings[0] + "." + strings[1];
+						result = strings[0] + "." + strings[1]; // here is the bug, string[1]
 					}
 				}
 			}

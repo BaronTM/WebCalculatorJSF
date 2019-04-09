@@ -1,17 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</head>
-<frameset>
-    <frame />
-    <frame />
-    <noframes>
-    <body>
-    <p>This page uses frames. The current browser you are using does not support frames.</p>
-    </body>
-    </noframes>
-</frameset>
+<title>Index jsf</title>
+<link rel="stylesheet" type="text/css" href="css/styles.css"/>
+</h:head>
+<h:body>
+	<h1 class="header">JSP CALCULATOR</h1>
+	<h:form action="index.jsp" method="post">
+	<div>
+		<table class="tab">
+			<tr class="firstLine">
+				<td colspan="4" align="right" class="display">
+					<input class="input" type="text" name="firstname" disabled="disabled" value="#{calc.display}"/>			
+				</td>
+				<td><h:commandButton name="button" class="button" value="C" type="submit" action="#{calc.reset}"/></td>
+			</tr>
+			<tr>
+				<td><h:commandButton name="button" class="button" value="7" type="submit" action="#{calc.click('7')}"/></td>
+				<td><h:commandButton name="button" class="button" value="8" type="submit" action="#{calc.click('8')}"/></td>
+				<td><h:commandButton name="button" class="button" value="9" type="submit" action="#{calc.click('9')}"/></td>
+				<td><h:commandButton name="button" class="button" value="/" type="submit" action="#{calc.click('/')}"/></td>
+				<td><h:commandButton name="button" class="button" value="√" type="submit" action="#{calc.click('s')}"/></td>
+			</tr>
+			<tr>
+				<td><h:commandButton name="button" class="button" type="submit" value="4" action="#{calc.click('4')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="5" action="#{calc.click('5')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="6" action="#{calc.click('6')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="*" action="#{calc.click('*')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="%" action="#{calc.click('%')}"/></td>
+			</tr>
+			<tr>
+				<td><h:commandButton name="button" class="button" type="submit" value="1" action="#{calc.click('1')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="2" action="#{calc.click('2')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="3" action="#{calc.click('3')}"/></td>
+				<td><h:commandButton name="button" class="button" type="submit" value="-" action="#{calc.click('-')}"/></td>
+				<td rowspan="2"><h:commandButton class="button" type="submit" name="button" value="=" action="#{calc.click('=')}"/></td>
+			</tr>
+			<tr>
+				<td><h:commandButton type="submit" name="button" class="button" value="0" action="#{calc.click('0')}"/></td>
+				<td><h:commandButton type="submit" name="button" class="button" value="." action="#{calc.click('.')}"/></td>
+				<td><h:commandButton type="submit" name="button" class="button" value="+/-" action="#{calc.click('n')}"/></td>
+				<td><h:commandButton type="submit" name="button" class="button" value="+" action="#{calc.click('+')}"/></td>
+			</tr>
+		</table>
+		</div>
+	</h:form>
+	<h8 class="area">Made by Ernest Paprocki</h8>
+</h:body>
 </html>
