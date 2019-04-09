@@ -19,6 +19,90 @@ body {
 	margin-right: auto;
 }
 
+/* ======================================================================== */
+
+.header {
+	text-align:center;
+  	width: 1000px;
+  	margin: 20px auto 0 auto;
+ 	padding-top: 100px;
+ 	padding-bottom: 80px;
+	font-family: rage;
+	color: #fff;
+	font-size: 100px;
+	animation: anim 2s alternate infinite;
+    text-shadow:0px 0px 20px #f37eb6,
+	0px 0px 20px #f37eb6,
+	0px 0px 20px #f37eb6,
+	0px 0px 20px #f37eb6,
+	0px 0px 20px #f37eb6,
+	0px 0px 20px #f37eb6;
+	transform: rotate(-10deg);
+  /* Safari */
+  -webkit-transform: rotate(-10deg);
+
+  /* Firefox */
+  -moz-transform: rotate(-10deg);
+
+  /* IE */
+  -ms-transform: rotate(-10deg);
+
+  /* Opera */
+  -o-transform: rotate(-10deg);
+}
+
+/* ======================================================================== */
+
+.input {	
+	background: transparent;
+	text-align: right;
+	border: none;
+	height: 100%;
+	width: 100%;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+		"AppleGothic", sans-serif;
+	font-size: 70px;
+	text-transform: uppercase;
+	text-rendering: optimizeLegibility;
+	color: #131313;
+	letter-spacing: .1em;
+	text-shadow: 1px -1px 0 #076361, -1px 2px 1px #0a7673, -2px 4px 1px
+		#0b8a87, -3px 6px 1px #0c9e9b, -4px 8px 1px #0db3ae, -5px 10px 1px
+		#0fc6c1;
+}
+
+.err {
+	text-shadow: 1px -1px 0 #6a0003, -1px 2px 1px #950004, -2px 4px 1px
+		#bf0005, -3px 6px 1px #ea0006, -4px 8px 1px #ff151c, -5px 10px 1px
+		#ff4045;
+}
+
+/* ======================================================================== */
+
+.tab {
+	width: 800px;
+	border-spacing: 10px;
+	margin-left: 100px;
+	table-layout: fixed;
+	padding-bottom: 30px;
+}
+
+th, td {
+	width: 20%;
+	height: 50px;
+}
+
+.display {
+	width: 80%;
+	padding: 0;
+}
+
+.firstLine {
+	height: 100px;
+}
+
+/* ======================================================================== */
+
 .button {
 	text-align: center;
 	text-transform: uppercase;
@@ -84,54 +168,8 @@ body {
 	outline: 0;
 }
 
-/* =========================================================== */
-
-.tab {
-	width: 800px;
-	border-spacing: 10px;
-	margin-left: 100px;
-	table-layout: fixed;
-}
-
-th, td {
-	width: 20%;
-	height: 50px;
-}
-
-.display {
-	width: 80%;
-	padding: 0;
-}
-
-.firstLine {
-	height: 100px;
-}
-
-.input {	
-	background: transparent;
-	text-align: right;
-	border: none;
-	height: 100%;
-	width: 100%;
-	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
-		"AppleGothic", sans-serif;
-	font-size: 70px;
-	text-transform: uppercase;
-	text-rendering: optimizeLegibility;
-	color: #131313;
-	letter-spacing: .1em;
-	text-shadow: 1px -1px 0 #076361, -1px 2px 1px #0a7673, -2px 4px 1px
-		#0b8a87, -3px 6px 1px #0c9e9b, -4px 8px 1px #0db3ae, -5px 10px 1px
-		#0fc6c1;
-}
-
-.err {
-	text-shadow: 1px -1px 0 #6a0003, -1px 2px 1px #950004, -2px 4px 1px
-		#bf0005, -3px 6px 1px #ea0006, -4px 8px 1px #ff151c, -5px 10px 1px
-		#ff4045;
-}
-
 /* ======================================================================== */
+
 .area {
   margin-left: 120px;
   text-align: center;
@@ -169,35 +207,5 @@ th, td {
 
 /* ========================================================================= */
 
-
-.header {
-	text-align:center;
-  	width: 1000px;
-  	margin: 20px auto 0 auto;
- 	padding-top: 50px;
- 	padding-bottom: 30px;
-	font-family: rage;
-	color: #fff;
-	font-size: 100px;
-	animation: anim 2s alternate infinite;
-    text-shadow:0px 0px 20px #f37eb6,
-	0px 0px 20px #f37eb6,
-	0px 0px 20px #f37eb6,
-	0px 0px 20px #f37eb6,
-	0px 0px 20px #f37eb6,
-	0px 0px 20px #f37eb6;
-	transform: rotate(-10deg);
-  /* Safari */
-  -webkit-transform: rotate(-10deg);
-
-  /* Firefox */
-  -moz-transform: rotate(-10deg);
-
-  /* IE */
-  -ms-transform: rotate(-10deg);
-
-  /* Opera */
-  -o-transform: rotate(-10deg);
-}
 
 

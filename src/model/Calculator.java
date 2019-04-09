@@ -141,11 +141,15 @@ public class Calculator {
 					NumberFormat nf = NumberFormat.getInstance();
 					nf.setGroupingUsed(false);
 					nf.setMaximumFractionDigits(12-dotIndex);
-					String[] strings = nf.format(resD).split(",");
+					String format = nf.format(resD);
+					String[] strings = format.split(",");
 					if (strings[0].length() > 12) {
 						result = "ERROR";
 					} else {
-						result = strings[0] + "." + strings[1]; // here is the bug, string[1]
+						result = strings[0] + ".";
+						if (strings.length > 1) {
+							result += strings[1];
+						}
 					}
 				}
 			}
