@@ -53,7 +53,7 @@ body {
 
 /* ======================================================================== */
 
-.input {	
+input {	
 	background: transparent;
 	text-align: right;
 	border: none;
@@ -76,6 +76,8 @@ body {
 		#bf0005, -3px 6px 1px #ea0006, -4px 8px 1px #ff151c, -5px 10px 1px
 		#ff4045;
 }
+
+
 
 /* ======================================================================== */
 
@@ -106,6 +108,8 @@ th, td {
 .button {
 	text-align: center;
 	text-transform: uppercase;
+	text-shadow: none;
+	font-family: sans-serif;
 	cursor: pointer;
 	font-size: 20px;
 	letter-spacing: 4px;
@@ -116,7 +120,6 @@ th, td {
 	padding: 0px;
 	width: 100%;
 	height: 100%;
-	text-align: center;
 	transition-duration: 0.4s;
 	overflow: hidden;
 	box-shadow: 0 5px 15px #193047;
@@ -165,6 +168,74 @@ th, td {
 }
 
 .button:focus {
+	outline: 0;
+}
+
+
+.set {
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: none;
+	font-family: sans-serif;
+	font-weight:bolder;
+	cursor: pointer;
+	font-size: 14px;
+	letter-spacing: 4px;
+	position: relative;
+	background-color: #0080ff;
+	border: none;
+	color: #fff;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+	transition-duration: 0.4s;
+	overflow: hidden;
+	box-shadow: 0 5px 15px #193047;
+	border-radius: 4px;
+}
+
+.set:hover {
+	background: #fff;
+	box-shadow: 0px 2px 10px 5px #59acff;
+	color: #000;
+}
+
+.set:after {
+	content: "";
+	background: #59acff;
+	display: block;
+	position: absolute;
+	padding-top: 300%;
+	padding-left: 350%;
+	margin-left: -20px !important;
+	margin-top: -120%;
+	opacity: 0;
+	transition: all 0.8s
+}
+
+.set:disabled {
+	background-color: #666666;
+	color: #fff;
+	transition-duration: 0.4s;
+	overflow: hidden;
+	box-shadow: 0 5px 15px #193047;
+	border-radius: 4px;
+}
+
+.set:disabled:hover {
+	background: #666666;
+	box-shadow: 0px;
+	color: #fff;
+}
+
+.set:active:after {
+	padding: 0;
+	margin: 0;
+	opacity: 1;
+	transition: 0s
+}
+
+.set:focus {
 	outline: 0;
 }
 
