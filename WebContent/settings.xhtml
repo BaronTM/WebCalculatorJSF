@@ -13,7 +13,7 @@
 <ui:param name="disabled" value="#{calc.display.equalsIgnoreCase('error')? 'true' : 'false'}" />
 </h:head>
 <h:body>
-	<h1 class="header">JSF CALCULATOR</h1>
+	<h1 class="header">SETTINGS</h1>
 	<h:form action="index.jsp" method="post">
 	<div>
 		<table class="tab">
@@ -51,11 +51,12 @@
 				<td><h:commandButton type="submit" name="button" class="button" value="+" action="#{calc.click('+')}" disabled="#{disabled}"/></td>
 			</tr>
 			<tr>
-				<td style="height: 20px"></td>
-				<td style="height: 20px"></td>
+				<td colspan="2" align="right" style="height: 20px">
+				<h:commandButton type="submit" name="button" class="set" value="DEFAULT"/>
+				</td>				
 				<td style="height: 20px"></td>
 				<td colspan="2" align="right" style="height: 20px">
-				<h:commandButton type="submit" name="button" class="set" value="SETTINGS" action="settings"/>
+				<h:commandButton type="submit" name="button" class="set" value="RETURN" action="index"/>
 				</td>				
 			</tr>
 		</table>
