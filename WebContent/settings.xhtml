@@ -14,7 +14,7 @@
 </h:head>
 <style type="text/css">
 html {
-	#{backgroundStyle}
+	#{setting.background}
 }
 </style>
 <h:body>
@@ -23,27 +23,18 @@ html {
 	<div>
 		<table class="tab">
 			<tr>
-				<td colspan="3" align="left"><p>Background gradient</p></td>
-				<td colspan="2" align="right">
+				<td align="left"><p>Background gradient</p></td>
+				<td align="right">
 				<h:selectOneMenu value="#{backgroundStyle.gradient}">
 				    <f:selectItems value="#{backgroundStyle.gradientOptions}"/>
 				</h:selectOneMenu>
 				</td>
 			</tr>
 			<tr>
-				<td colspan="3" align="left"><p>Background gradient</p></td>
-				<td colspan="2" align="right">
-				<h:selectOneMenu value="#{backgroundStyle.gradient}">
-				    <f:selectItems value="#{backgroundStyle.gradientOptions}"/>
-				</h:selectOneMenu>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2" align="right" style="height: 20px">
+				<td align="left" style="height: 20px">
 				<h:commandButton type="submit" name="button" class="set" value="DEFAULT"/>
 				</td>				
-				<td style="height: 20px"></td>
-				<td colspan="2" align="right" style="height: 20px">
+				<td align="right" style="height: 20px">
 				<h:commandButton type="submit" name="button" class="set" value="RETURN" action="index"/>
 				</td>				
 			</tr>

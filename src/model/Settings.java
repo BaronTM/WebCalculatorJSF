@@ -1,20 +1,35 @@
 package model;
 
+import java.util.List;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Inject;
+import javax.inject.Named;
 import javax.swing.text.html.CSS;
+import javax.ws.rs.BeanParam;
 
-@ManagedBean(name = "set", eager = true)
+import model.styles.BackgroundStyle;
+import model.styles.CssStyle;
+
+@Named
 @ApplicationScoped
 public class Settings {
 	
-	private String headerStyle;
+	private List<CssStyle> styleElements;
+	
+	@Inject
+	private BackgroundStyle background;
 	
 	public Settings() {
-		headerStyle = "font-size: 40px;";		
+		this.styleElements.add(this.background);
 	}
-	
-	public String getHeaderStyle() {
-		return this.headerStyle;
+
+	public BackgroundStyle getBackground() {
+		return background;
+	}
+
+	public void setBackground(BackgroundStyle background) {
+		this.background = background;
 	}
 }

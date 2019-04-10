@@ -1,12 +1,21 @@
 package model.styles;
 
+import java.io.Serializable;
+
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.inject.Named;
 
-@ManagedBean(eager = true)
+
+@Named
 @ApplicationScoped
-public class BackgroundStyle implements CssStyle {
-	
+public class BackgroundStyle implements CssStyle, Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2636765418031588337L;
+
 	private String[] gradientOptions = {"LINEAR", "RADIAL", "OFF"};
 	
 	private String gradient;
