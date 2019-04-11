@@ -31,18 +31,34 @@ html {
 				</td>
 			</tr>
 			<tr>
-				<td align="left"><p>Background main color</p></td>
-				<td align="right">#{backgroundStyle.color1R}
-					<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('R1')}"/>
-					<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('R1')}"/>
+				<td align="left" valign="top"><p>Background main color</p></td>
+				<td align="right">
+				<h:panelGrid columns="2">
+				<p>RED</p>
+				<h:panelGroup>
+				<td align="right">
+					<h:inputText value="#{backgroundStyle.color1R}"/>
+						<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('R1')}"/>
+						<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('R1')}"/>
 				</td>
-				<td align="right">#{backgroundStyle.color1G}
-					<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('G1')}"/>
-					<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('G1')}"/>
+				</h:panelGroup>
+				<p>GREEN</p>
+				<h:panelGroup>
+				<td align="right">
+					<h:inputText value="#{backgroundStyle.color1G}"/>
+						<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('G1')}"/>
+						<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('G1')}"/>
 				</td>
-				<td align="right">#{backgroundStyle.color1B}
-					<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('B1')}"/>
-					<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('B1')}"/>
+				</h:panelGroup>
+				<p>BLUE</p>
+				<h:panelGroup>
+				<td align="right">
+					<h:inputText value="#{backgroundStyle.color1B}"/>
+						<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('B1')}"/>
+						<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('B1')}"/>
+				</td>
+				</h:panelGroup>
+				</h:panelGrid>
 				</td>
 			</tr>
 			<tr>

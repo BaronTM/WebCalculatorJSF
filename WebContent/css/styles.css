@@ -53,7 +53,7 @@ body {
 
 /* ======================================================================== */
 
-input {	
+.in {	
 	background: transparent;
 	text-align: right;
 	border: none;
@@ -72,12 +72,11 @@ input {
 }
 
 .err {
+	@extend .in;
 	text-shadow: 1px -1px 0 #6a0003, -1px 2px 1px #950004, -2px 4px 1px
 		#bf0005, -3px 6px 1px #ea0006, -4px 8px 1px #ff151c, -5px 10px 1px
 		#ff4045;
 }
-
-
 
 /* ======================================================================== */
 

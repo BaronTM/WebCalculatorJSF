@@ -7,5 +7,12 @@ public class MainTitleStyle implements CssStyle{
 		// TODO Auto-generated method stub
 		
 	}
+	
+	@Override
+	public void upload() {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 }

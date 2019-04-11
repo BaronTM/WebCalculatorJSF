@@ -53,6 +53,18 @@ public class BackgroundStyle implements CssStyle, Serializable {
 		else
 			return "background: linear-gradient(to right, " + color1 + ", " + color1 + ");";
 	}
+	
+	@Override
+	public void upload() {
+		this.color1 = "#" + Integer.toHexString(color1R)
+							+ Integer.toHexString(color1G)
+							+ Integer.toHexString(color1B);
+		this.color2 = "#" + Integer.toHexString(color2R)
+							+ Integer.toHexString(color2G)
+							+ Integer.toHexString(color2B);
+
+	}
+
 
 	public void increment(String str) {
 		switch (str) {
@@ -61,7 +73,33 @@ public class BackgroundStyle implements CssStyle, Serializable {
 				color1R++;
 			break;
 		}
+		case "G1": {
+			if (color1G < 255)
+				color1G++;
+			break;
 		}
+		case "B1": {
+			if (color1B < 255)
+				color1B++;
+			break;
+		}
+		case "R2": {
+			if (color2R < 255)
+				color2R++;
+			break;
+		}
+		case "G2": {
+			if (color2G < 255)
+				color2G++;
+			break;
+		}
+		case "B2": {
+			if (color2B < 255)
+				color2B++;
+			break;
+		}
+		}
+		upload();
 	}
 
 	public void decrement(String str) {
@@ -71,7 +109,33 @@ public class BackgroundStyle implements CssStyle, Serializable {
 				color1R--;
 			break;
 		}
+		case "G1": {
+			if (color1G > 0)
+				color1G--;
+			break;
 		}
+		case "B1": {
+			if (color1B > 0)
+				color1B--;
+			break;
+		}
+		case "R2": {
+			if (color2R > 0)
+				color2R--;
+			break;
+		}
+		case "G2": {
+			if (color2G > 0)
+				color2G--;
+			break;
+		}
+		case "B2": {
+			if (color2B > 0)
+				color2B--;
+			break;
+		}
+		}
+		upload();
 	}
 
 	public String getGradient() {
