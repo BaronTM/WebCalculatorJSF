@@ -15,14 +15,12 @@ public class BackgroundStyle implements CssStyle, Serializable {
 	 */
 	private static final long serialVersionUID = 2636765418031588337L;
 
-	private String[] gradientOptions = { "LINEAR", "RADIAL", "OFF" };
+	private String[] gradientOptions = {"LINEAR", "RADIAL", "OFF"};
 
 	private String gradient;
-	private String color1;
 	private int color1R;
 	private int color1G;
 	private int color1B;
-	private String color2;
 	private int color2R;
 	private int color2G;
 	private int color2B;
@@ -34,108 +32,25 @@ public class BackgroundStyle implements CssStyle, Serializable {
 	@Override
 	public void setDefault() {
 		this.gradient = gradientOptions[0];
-		this.color1 = "#606c88";
-		this.color1R = Integer.parseInt(color1.substring(1, 3), 16);
-		this.color1G = Integer.parseInt(color1.substring(3, 5), 16);
-		this.color1B = Integer.parseInt(color1.substring(5), 16);
-		this.color2 = "#04b7fb";
-		this.color2R = Integer.parseInt(color2.substring(1, 3), 16);
-		this.color2G = Integer.parseInt(color2.substring(3, 5), 16);
-		this.color2B = Integer.parseInt(color2.substring(5), 16);
+		this.color1R = 96;
+		this.color1G = 108;
+		this.color1B = 136;
+		this.color2R = 4;
+		this.color2G = 183;
+		this.color2B = 251;
 	}
 
 	@Override
 	public String toString() {
 		if (gradient.equals("LINEAR"))
-			return "background: linear-gradient(to right, " + color1 + ", " + color2 + ");";
+			return "background: linear-gradient(to right, rgb(" + color1R  + ", " + color1G + ", " + color1B + "), rgb("
+					+ color2R  + ", " + color2G + ", " + color2B + "));";
 		else if (gradient.equals("RADIAL"))
-			return "background: radial-gradient(" + color1 + ", " + color2 + ");";
+			return "background: radial-gradient(rgb(" + color1R  + ", " + color1G + ", " + color1B + "), rgb("
+					+ color2R  + ", " + color2G + ", " + color2B + "));";
 		else
-			return "background: linear-gradient(to right, " + color1 + ", " + color1 + ");";
-	}
-	
-	@Override
-	public void upload() {
-		this.color1 = "#" + Integer.toHexString(color1R)
-							+ Integer.toHexString(color1G)
-							+ Integer.toHexString(color1B);
-		this.color2 = "#" + Integer.toHexString(color2R)
-							+ Integer.toHexString(color2G)
-							+ Integer.toHexString(color2B);
-
-	}
-
-
-	public void increment(String str) {
-		switch (str) {
-		case "R1": {
-			if (color1R < 255)
-				color1R++;
-			break;
-		}
-		case "G1": {
-			if (color1G < 255)
-				color1G++;
-			break;
-		}
-		case "B1": {
-			if (color1B < 255)
-				color1B++;
-			break;
-		}
-		case "R2": {
-			if (color2R < 255)
-				color2R++;
-			break;
-		}
-		case "G2": {
-			if (color2G < 255)
-				color2G++;
-			break;
-		}
-		case "B2": {
-			if (color2B < 255)
-				color2B++;
-			break;
-		}
-		}
-		upload();
-	}
-
-	public void decrement(String str) {
-		switch (str) {
-		case "R1": {
-			if (color1R > 0)
-				color1R--;
-			break;
-		}
-		case "G1": {
-			if (color1G > 0)
-				color1G--;
-			break;
-		}
-		case "B1": {
-			if (color1B > 0)
-				color1B--;
-			break;
-		}
-		case "R2": {
-			if (color2R > 0)
-				color2R--;
-			break;
-		}
-		case "G2": {
-			if (color2G > 0)
-				color2G--;
-			break;
-		}
-		case "B2": {
-			if (color2B > 0)
-				color2B--;
-			break;
-		}
-		}
-		upload();
+			return "background: linear-gradient(to right, rgb(" + color1R  + ", " + color1G + ", " + color1B + "), rgb("
+					+ color1R  + ", " + color1G + ", " + color1B + "));";
 	}
 
 	public String getGradient() {
@@ -144,14 +59,6 @@ public class BackgroundStyle implements CssStyle, Serializable {
 
 	public void setGradient(String gradient) {
 		this.gradient = gradient;
-	}
-
-	public String getColor1() {
-		return color1;
-	}
-
-	public void setColor1(String color1) {
-		this.color1 = color1;
 	}
 
 	public int getColor1R() {
@@ -176,14 +83,6 @@ public class BackgroundStyle implements CssStyle, Serializable {
 
 	public void setColor1B(int color1b) {
 		color1B = color1b;
-	}
-
-	public String getColor2() {
-		return color2;
-	}
-
-	public void setColor2(String color2) {
-		this.color2 = color2;
 	}
 
 	public int getColor2R() {

@@ -7,12 +7,6 @@ public class SetButtonStyle implements CssStyle {
 		// TODO Auto-generated method stub
 		
 	}
-	
-	@Override
-	public void upload() {
-		// TODO Auto-generated method stub
-		
-	}
 
 
 }

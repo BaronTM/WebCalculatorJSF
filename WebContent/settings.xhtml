@@ -4,19 +4,26 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
     xmlns:ui="http://java.sun.com/jsf/facelets"
     xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core">
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
 <h:head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Index jsf</title>
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <ui:param name="displayText" value="#{calc.display}" />
 <ui:param name="disabled" value="#{calc.display.equalsIgnoreCase('error')? 'true' : 'false'}" />
-</h:head>
 <style type="text/css">
 html {
 	#{set.background}
 }
+.button {
+	#{set.button.butStyle}
+}
+.button:hover {
+	#{set.button.butHStyle}
+}
 </style>
+</h:head>
 <h:body>
 	<h1 class="header">SETTINGS</h1>
 	<h:form action="index.jsp" method="post">
@@ -25,49 +32,102 @@ html {
 			<tr>
 				<td align="left"><p>Background gradient</p></td>
 				<td align="right">
-				<h:selectOneMenu value="#{backgroundStyle.gradient}">
-				    <f:selectItems value="#{backgroundStyle.gradientOptions}"/>
-				</h:selectOneMenu>
+				<p:selectOneMenu id="gradientConsole" value="#{backgroundStyle.gradient}" style="width:125px">
+		            <f:selectItems value="#{backgroundStyle.gradientOptions}"/>
+        		</p:selectOneMenu>
 				</td>
 			</tr>
 			<tr>
 				<td align="left" valign="top"><p>Background main color</p></td>
 				<td align="right">
-				<h:panelGrid columns="2">
-				<p>RED</p>
-				<h:panelGroup>
-				<td align="right">
-					<h:inputText value="#{backgroundStyle.color1R}"/>
-						<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('R1')}"/>
-						<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('R1')}"/>
-				</td>
-				</h:panelGroup>
-				<p>GREEN</p>
-				<h:panelGroup>
-				<td align="right">
-					<h:inputText value="#{backgroundStyle.color1G}"/>
-						<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('G1')}"/>
-						<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('G1')}"/>
-				</td>
-				</h:panelGroup>
-				<p>BLUE</p>
-				<h:panelGroup>
-				<td align="right">
-					<h:inputText value="#{backgroundStyle.color1B}"/>
-						<h:commandButton class="set" style="width: 15px; height: 20px" value="▲" action="#{backgroundStyle.increment('B1')}"/>
-						<h:commandButton class="set" style="width: 15px; height: 20px" value="▼" action="#{backgroundStyle.decrement('B1')}"/>
-				</td>
-				</h:panelGroup>
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="color1RSpinner" value="#{backgroundStyle.color1R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="color1GSpinner" value="#{backgroundStyle.color1G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="color1BSpinner" value="#{backgroundStyle.color1B}" min="0" max="255" size="2"/>				
 				</h:panelGrid>
 				</td>
 			</tr>
 			<tr>
+				<td align="left" valign="top"><p>Background additional color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="color2RSpinner" value="#{backgroundStyle.color2R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="color2GSpinner" value="#{backgroundStyle.color2G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="color2BSpinner" value="#{backgroundStyle.color2B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Button font size</p></td>
+				<td align="right">
+					<p:spinner id="colorButFontSpinner" value="#{buttonStyle.fontSize}" min="1" max="40" size="2"/>				
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Button main color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorBut1RSpinner" value="#{buttonStyle.color1R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorBut1GSpinner" value="#{buttonStyle.color1G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorBut1BSpinner" value="#{buttonStyle.color1B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Button font color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorButF1RSpinner" value="#{buttonStyle.color1FR}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorButF1GSpinner" value="#{buttonStyle.color1FG}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorButF1BSpinner" value="#{buttonStyle.color1FB}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Button hover color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorBut2RSpinner" value="#{buttonStyle.color2R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorBut2GSpinner" value="#{buttonStyle.color2G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorBut2BSpinner" value="#{buttonStyle.color2B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Button hover font color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorButF2RSpinner" value="#{buttonStyle.color2FR}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorButF2GSpinner" value="#{buttonStyle.color2FG}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorButF2BSpinner" value="#{buttonStyle.color2FB}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>		
+			<tr>
 				<td align="left" style="height: 20px">
-				<h:commandButton type="submit" name="button" class="set" value="DEFAULT"/>
+					<h:commandButton type="submit" name="button" class="set" value="DEFAULT" action="#{set.setDefault}"/>
 				</td>				
 				<td align="right" style="height: 20px">
-				<h:commandButton type="submit" name="button" class="set" value="RETURN" action="index"/>
-				</td>				
+					<h:commandButton type="submit" name="button" class="set" value="SAVE" action="index"/>
+				</td>	
 			</tr>
 		</table>
 		</div>

@@ -11,12 +11,18 @@
 <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <ui:param name="displayText" value="#{calc.display}" />
 <ui:param name="disabled" value="#{calc.display.equalsIgnoreCase('error')? 'true' : 'false'}" />
-</h:head>
 <style type="text/css">
 html {
 	#{set.background}
 }
+.button {
+	#{set.button.butStyle}
+}
+.button:hover {
+	#{set.button.butHStyle}
+}
 </style>
+</h:head>
 <h:body>
 	<h1 class="header">JSF CALCULATOR</h1>
 	<h:form action="index.jsp" method="post">

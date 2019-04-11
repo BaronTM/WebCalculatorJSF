@@ -20,16 +20,17 @@ public class Calculator {
 		reset();
 	}
 
-	public void reset() {
+	public String reset() {
 		a = 0;
 		b = 0;
 		current = "0";
 		disp = "0";
 		sign = ' ';
 		percent = false;
+		return "index";
 	}
 
-	public void click(String str) {
+	public String click(String str) {
 		char c = str.charAt(0);
 		if (c >= 48 && c <= 57) {
 			if ((current.startsWith("0") || current.startsWith("-0")) && !current.contains(".") && c == 48) {
@@ -83,6 +84,7 @@ public class Calculator {
 			sign = c;
 			disp = tempDisp;
 		}
+		return "index";
 	}
 
 	private void calculate() {
