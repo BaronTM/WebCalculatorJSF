@@ -87,7 +87,18 @@ p {
 }
 
 .err {
-	@extend .in;
+	background: transparent;
+	text-align: right;
+	border: none;
+	height: 100%;
+	width: 100%;
+	font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic,
+		"AppleGothic", sans-serif;
+	font-size: 70px;
+	text-transform: uppercase;
+	text-rendering: optimizeLegibility;
+	color: #131313;
+	letter-spacing: .1em;
 	text-shadow: 1px -1px 0 #6a0003, -1px 2px 1px #950004, -2px 4px 1px
 		#bf0005, -3px 6px 1px #ea0006, -4px 8px 1px #ff151c, -5px 10px 1px
 		#ff4045;
