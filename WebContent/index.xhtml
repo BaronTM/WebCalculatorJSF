@@ -21,10 +21,19 @@ html {
 .button:hover {
 	#{set.button.butHStyle}
 }
+.header {
+	#{set.main}
+}
+.set {
+	#{set.setButton.butStyle}
+}
+.set:hover {
+	#{set.setButton.butHStyle}
+}
 </style>
 </h:head>
 <h:body>
-	<h1 class="header">JSF CALCULATOR</h1>
+	<h1 class="header">#{set.main.title}</h1>
 	<h:form action="index.jsp" method="post">
 	<div>
 		<table class="tab">

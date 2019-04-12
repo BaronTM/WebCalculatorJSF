@@ -22,6 +22,15 @@ html {
 .button:hover {
 	#{set.button.butHStyle}
 }
+.header {
+	#{set.main}
+}
+.set {
+	#{set.setButton.butStyle}
+}
+.set:hover {
+	#{set.setButton.butHStyle}
+}
 </style>
 </h:head>
 <h:body>
@@ -120,7 +129,97 @@ html {
 					<p:spinner id="colorButF2BSpinner" value="#{buttonStyle.color2FB}" min="0" max="255" size="2"/>				
 				</h:panelGrid>
 				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Main title</p></td>
+				<td align="right">
+					<p:inputText id="mainTitleText" value="#{mainTitleStyle.title}" maxlength="20"/>				
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Main title inside color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorMain1RSpinner" value="#{mainTitleStyle.color1R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorMain1GSpinner" value="#{mainTitleStyle.color1G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorMain1BSpinner" value="#{mainTitleStyle.color1B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Main title outside color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorMain2RSpinner" value="#{mainTitleStyle.color2R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorMain2GSpinner" value="#{mainTitleStyle.color2G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorMain2BSpinner" value="#{mainTitleStyle.color2B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Main title font size</p></td>
+				<td align="right">
+					<p:spinner id="mainFontSizeSpinner" value="#{mainTitleStyle.fontSize}" min="20" max="150" size="2"/>				
+				</td>
 			</tr>		
+			<tr>
+				<td align="left" valign="top"><p>Option button main color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorSetBut1RSpinner" value="#{setButtonStyle.color1R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorSetBut1GSpinner" value="#{setButtonStyle.color1G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorSetBut1BSpinner" value="#{setButtonStyle.color1B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Option button font color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorSetButF1RSpinner" value="#{setButtonStyle.color1FR}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorSetButF1GSpinner" value="#{setButtonStyle.color1FG}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorSetButF1BSpinner" value="#{setButtonStyle.color1FB}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Option button hover color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorSetBut2RSpinner" value="#{setButtonStyle.color2R}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorSetBut2GSpinner" value="#{setButtonStyle.color2G}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorSetBut2BSpinner" value="#{setButtonStyle.color2B}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
+			<tr>
+				<td align="left" valign="top"><p>Option button hover font color</p></td>
+				<td align="right">
+				<h:panelGrid columns="6">
+					<p align="right">R: </p>
+					<p:spinner id="colorSetButF2RSpinner" value="#{setButtonStyle.color2FR}" min="0" max="255" size="2"/>
+					<p align="right">G: </p>
+					<p:spinner id="colorSetButF2GSpinner" value="#{setButtonStyle.color2FG}" min="0" max="255" size="2"/>
+					<p align="right">B: </p>
+					<p:spinner id="colorSetButF2BSpinner" value="#{setButtonStyle.color2FB}" min="0" max="255" size="2"/>				
+				</h:panelGrid>
+				</td>
+			</tr>
 			<tr>
 				<td align="left" style="height: 20px">
 					<h:commandButton type="submit" name="button" class="set" value="DEFAULT" action="#{set.setDefault}"/>
