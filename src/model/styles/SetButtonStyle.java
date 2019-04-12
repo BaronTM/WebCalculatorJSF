@@ -61,6 +61,25 @@ public class SetButtonStyle implements CssStyle, Serializable {
 		
 	}
 	
+	@Override
+	public void random() {
+		this.color1R = (int) (256 * Math.random());
+		this.color1G = (int) (256 * Math.random());
+		this.color1B = (int) (256 * Math.random());
+		
+		this.color2R = (int) (256 * Math.random());
+		this.color2G = (int) (256 * Math.random());
+		this.color2B = (int) (256 * Math.random());
+		
+		this.color1FR = (int) (256 * Math.random());
+		this.color1FG = (int) (256 * Math.random());
+		this.color1FB = (int) (256 * Math.random());
+		
+		this.color2FR = (int) (256 * Math.random());
+		this.color2FG = (int) (256 * Math.random());
+		this.color2FB = (int) (256 * Math.random());
+	}
+	
 	public String getButStyle() {
 		return "background-color: rgb(" + color1R  + ", " + color1G + ", " + color1B + ");" + "\n"
 				+ "color: rgb(" + color1FR  + ", " + color1FG + ", " + color1FB + ");";
@@ -167,4 +186,5 @@ public class SetButtonStyle implements CssStyle, Serializable {
 	public void setColor2FB(int color2fb) {
 		color2FB = color2fb;
 	}
+
 }

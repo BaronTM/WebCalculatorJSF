@@ -56,6 +56,19 @@ public class MainTitleStyle implements CssStyle, Serializable {
 		this.title = "JSF CALCULATOR";
 	}
 	
+	@Override
+	public void random() {
+		this.color1R = (int) (256 * Math.random());
+		this.color1G = (int) (256 * Math.random());
+		this.color1B = (int) (256 * Math.random());
+		
+		this.color2R = (int) (256 * Math.random());
+		this.color2G = (int) (256 * Math.random());
+		this.color2B = (int) (256 * Math.random());
+		
+		this.fontSize = (int) (151 * Math.random());
+	}	
+	
 	public int getColor1R() {
 		return color1R;
 	}
@@ -119,6 +132,6 @@ public class MainTitleStyle implements CssStyle, Serializable {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
-	
+
+
 }

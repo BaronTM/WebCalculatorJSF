@@ -52,6 +52,18 @@ public class BackgroundStyle implements CssStyle, Serializable {
 			return "background: linear-gradient(to right, rgb(" + color1R  + ", " + color1G + ", " + color1B + "), rgb("
 					+ color1R  + ", " + color1G + ", " + color1B + "));";
 	}
+	
+	@Override
+	public void random() {
+		this.gradient = gradientOptions[(int) (3 * Math.random())];
+		this.color1R = (int) (256 * Math.random());
+		this.color1G = (int) (256 * Math.random());
+		this.color1B = (int) (256 * Math.random());
+		this.color2R = (int) (256 * Math.random());
+		this.color2G = (int) (256 * Math.random());
+		this.color2B = (int) (256 * Math.random());
+	}
+
 
 	public String getGradient() {
 		return gradient;

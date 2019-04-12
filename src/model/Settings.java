@@ -11,6 +11,7 @@ import model.styles.ButtonStyle;
 import model.styles.CssStyle;
 import model.styles.MainTitleStyle;
 import model.styles.SetButtonStyle;
+import model.styles.SignatureStyle;
 
 @ManagedBean(name = "set", eager = true)
 @ApplicationScoped
@@ -25,6 +26,8 @@ public class Settings {
 	private MainTitleStyle main;
 	@ManagedProperty(value = "#{setButtonStyle}")
 	private SetButtonStyle setButton;
+	@ManagedProperty(value = "#{signatureStyle}")
+	private SignatureStyle signature;
 	
 	
 	public Settings() {
@@ -60,6 +63,14 @@ public class Settings {
 
 	public void setSetButton(SetButtonStyle setButton) {
 		this.setButton = setButton;
+	}	
+
+	public SignatureStyle getSignature() {
+		return signature;
+	}
+
+	public void setSignature(SignatureStyle signature) {
+		this.signature = signature;
 	}
 
 	public String setDefault() {
@@ -67,6 +78,16 @@ public class Settings {
 		this.button.setDefault();
 		this.main.setDefault();
 		this.setButton.setDefault();
+		this.signature.setDefault();
+		return "settings";
+	}
+	
+	public String setRandom() {
+		this.background.random();
+		this.button.random();
+		this.main.random();
+		this.setButton.random();
+		this.signature.random();
 		return "settings";
 	}
 }
